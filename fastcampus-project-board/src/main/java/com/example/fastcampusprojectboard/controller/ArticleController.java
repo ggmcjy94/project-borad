@@ -20,8 +20,8 @@ public class ArticleController {
     }
     @GetMapping("/{articleId}")
     public String article(@PathVariable Long articleId, ModelMap map) {
-        map.addAttribute("article", "article");
-        map.addAttribute("articleComments", List.of());
+        map.addAttribute("articles", "article");
+        map.addAttribute("articlesComments", List.of());
         return "articles/detail";
     }
 }
