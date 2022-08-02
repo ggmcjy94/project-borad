@@ -1,5 +1,6 @@
 package com.example.fastcampusprojectboard.service;
 
+import com.example.fastcampusprojectboard.dto.ArticleCommentDto;
 import com.example.fastcampusprojectboard.repository.ArticleCommentRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -16,7 +17,6 @@ public class ArticleCommentService {
 
     @Transactional(readOnly = true)
     public List<ArticleCommentDto> searchArticleComment(long articleId) {
-
         return List.of();
     }
 }

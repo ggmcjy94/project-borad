@@ -4,6 +4,7 @@ import com.example.fastcampusprojectboard.domain.Article;
 import com.example.fastcampusprojectboard.repository.ArticleCommentRepository;
 import com.example.fastcampusprojectboard.repository.ArticleRepository;
 import org.assertj.core.api.Assertions;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -20,6 +21,7 @@ import static org.mockito.BDDMockito.given;
 import static org.mockito.BDDMockito.then;
 
 
+@Disabled
 @DisplayName("비즈니스 로직 - 게시글")
 @ExtendWith(MockitoExtension.class)
 class ArticleCommentServiceTest {

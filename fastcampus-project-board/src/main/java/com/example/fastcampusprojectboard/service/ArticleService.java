@@ -37,7 +37,7 @@ public class ArticleService {
 
     }
 
-    public void updateArticle(long articleId, ArticleUpdateDto updateDto) {
+    public void updateArticle(long articleId, ArticleDto dto) {
     }
 
     public void deleteArticle(long articleId) {

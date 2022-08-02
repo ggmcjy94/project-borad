@@ -32,7 +32,9 @@ public class ArticleComment extends AuditingFields{
     private Article article; // 게시글 (ID)
 
     @Setter
-    @ManyToOne(optional = false) @JoinColumn(name = "userId") private UserAccount userAccount; // 유저 정보 (ID)
+    @ManyToOne(optional = false)  // 이 항목은 false로 설정했을 때 해당 객체에 null이 들어갈 수 있습니다. 반대로 반드시 값이 필요하다면 true가 들어갑니다.
+    @JoinColumn(name = "userId")
+    private UserAccount userAccount; // 유저 정보 (ID)
 
     @Setter
     @Column(nullable = false, length = 500)

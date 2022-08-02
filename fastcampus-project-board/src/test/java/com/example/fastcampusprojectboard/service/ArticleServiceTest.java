@@ -4,6 +4,7 @@ import com.example.fastcampusprojectboard.domain.Article;
 import com.example.fastcampusprojectboard.domain.type.SearchType;
 import com.example.fastcampusprojectboard.dto.ArticleDto;
 import com.example.fastcampusprojectboard.repository.ArticleRepository;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -20,6 +21,7 @@ import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.BDDMockito.*;
 
 
+@Disabled
 @DisplayName("비즈니스 로직 - 게시글")
 @ExtendWith(MockitoExtension.class)
 class ArticleServiceTest {
