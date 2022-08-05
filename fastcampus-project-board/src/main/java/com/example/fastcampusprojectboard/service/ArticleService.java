@@ -83,4 +83,12 @@ public class ArticleService {
     public List<String> getHashtags() {
         return articleRepository.findAllDistinctHashtags();
     }
+
+    public Object getArticleWithComments(Long articleId) {
+        return null;
+    }
+
+    public Object getArticleCount() {
+        return null;
+    }
 }

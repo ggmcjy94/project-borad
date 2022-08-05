@@ -15,7 +15,6 @@
         </attr>
         <attr sel="#search-value" th:value="${param.searchValue}" />
 
-
         <attr sel="#article-table">
             <attr sel="thead/tr">
                 <attr sel="th.title/a" th:text="'제목'" th:href="@{/articles(
@@ -45,9 +44,7 @@
                 searchType=${param.searchType},
                 searchValue=${param.searchValue}
                 )}"/>
-
             </attr>
-
 
             <attr sel="tbody" th:remove="all-but-first">
                 <attr sel="tr[0]" th:each="article : ${articles}">
@@ -58,6 +55,8 @@
                 </attr>
             </attr>
         </attr>
+
+        <attr sel="#write-article" sec:authorize="isAuthenticated()" th:href="@{/articles/form}" />
 
         <attr sel="#pagination">
             <attr sel="li[0]/a"
