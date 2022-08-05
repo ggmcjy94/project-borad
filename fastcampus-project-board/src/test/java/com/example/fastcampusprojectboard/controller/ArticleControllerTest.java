@@ -5,6 +5,7 @@ import com.example.fastcampusprojectboard.domain.type.SearchType;
 import com.example.fastcampusprojectboard.dto.ArticleDto;
 import com.example.fastcampusprojectboard.dto.ArticleWithCommentsDto;
 import com.example.fastcampusprojectboard.dto.UserAccountDto;
+import com.example.fastcampusprojectboard.dto.request.ArticleRequest;
 import com.example.fastcampusprojectboard.service.ArticleService;
 import com.example.fastcampusprojectboard.service.PaginationService;
 import com.example.fastcampusprojectboard.util.FormDataEncoder;
