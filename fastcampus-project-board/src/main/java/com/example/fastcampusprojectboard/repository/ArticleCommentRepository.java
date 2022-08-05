@@ -12,6 +12,8 @@ import org.springframework.data.querydsl.binding.QuerydslBinderCustomizer;
 import org.springframework.data.querydsl.binding.QuerydslBindings;
 import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 
+import java.util.List;
+
 @RepositoryRestResource
 public interface ArticleCommentRepository extends
         JpaRepository<ArticleComment, Long> ,
@@ -25,8 +27,9 @@ public interface ArticleCommentRepository extends
         bindings.including(root.content, root.createdAt, root.createdBy);
         bindings.bind(root.content).first(StringExpression::containsIgnoreCase);
         bindings.bind(root.createdAt).first(DateTimeExpression::eq);
-        bindings.bind(root.createdBy).first(StringExpression::containsIgnoreCase); // like '%s{v}%'
+        bindings.bind(root.createdBy).first(StringExpression::containsIgnoreCase);
     }
 
     void deleteByIdAndUserAccount_UserId(Long articleCommentId, String userId);
+    List<ArticleComment> findByArticle_Id(Long articleId);
 }

@@ -1,6 +1,7 @@
 package com.example.fastcampusprojectboard.controller;
 
 import com.example.fastcampusprojectboard.config.SecurityConfig;
+import com.example.fastcampusprojectboard.config.TestSecurityConfig;
 import com.example.fastcampusprojectboard.dto.ArticleCommentDto;
 import com.example.fastcampusprojectboard.dto.request.ArticleCommentRequest;
 import com.example.fastcampusprojectboard.service.ArticleCommentService;
@@ -30,7 +31,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 
 
 @DisplayName("View 컨트롤러 - 게시글")
-@Import({SecurityConfig.class, FormDataEncoder.class})
+@Import({TestSecurityConfig.class, FormDataEncoder.class})
 @WebMvcTest(ArticleCommentController.class)
 class ArticleCommentControllerTest {
 

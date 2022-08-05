@@ -1,11 +1,14 @@
 package com.example.fastcampusprojectboard.controller;
 
 import com.example.fastcampusprojectboard.config.SecurityConfig;
-import com.example.fastcampusprojectboard.domain.type.SearchType;
+import com.example.fastcampusprojectboard.config.TestSecurityConfig;
+import com.example.fastcampusprojectboard.domain.constant.FormStatus;
+import com.example.fastcampusprojectboard.domain.constant.SearchType;
 import com.example.fastcampusprojectboard.dto.ArticleDto;
 import com.example.fastcampusprojectboard.dto.ArticleWithCommentsDto;
 import com.example.fastcampusprojectboard.dto.UserAccountDto;
 import com.example.fastcampusprojectboard.dto.request.ArticleRequest;
+import com.example.fastcampusprojectboard.dto.response.ArticleResponse;
 import com.example.fastcampusprojectboard.service.ArticleService;
 import com.example.fastcampusprojectboard.service.PaginationService;
 import com.example.fastcampusprojectboard.util.FormDataEncoder;
@@ -39,7 +42,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 
 
 @DisplayName("View 컨트롤러 - 게시글")
-@Import({SecurityConfig.class, FormDataEncoder.class})
+@Import({TestSecurityConfig.class, FormDataEncoder.class})
 @WebMvcTest(ArticleController.class)
 class ArticleControllerTest {
 
