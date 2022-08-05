@@ -1,6 +1,7 @@
 package com.example.fastcampusprojectboard.service;
 
 import com.example.fastcampusprojectboard.domain.Article;
+import com.example.fastcampusprojectboard.domain.ArticleComment;
 import com.example.fastcampusprojectboard.domain.UserAccount;
 import com.example.fastcampusprojectboard.dto.ArticleCommentDto;
 import com.example.fastcampusprojectboard.repository.ArticleCommentRepository;
@@ -20,13 +21,16 @@ import java.util.List;
 @Service
 public class ArticleCommentService {
 
-    private final ArticleCommentRepository articleCommentRepository;
     private final ArticleRepository articleRepository;
+    private final ArticleCommentRepository articleCommentRepository;
     private final UserAccountRepository userAccountRepository;
 
     @Transactional(readOnly = true)
-    public List<ArticleCommentDto> searchArticleComment(long articleId) {
-        return List.of();
+    public List<ArticleCommentDto> searchArticleComments(Long articleId) {
+        return articleCommentRepository.findByArticle_Id(articleId)
+                .stream()
+                .map(ArticleCommentDto::from)
+                .toList();
     }
 
     public void saveArticleComment(ArticleCommentDto dto) {
@@ -39,7 +43,18 @@ public class ArticleCommentService {
         }
     }
 
+    public void updateArticleComment(ArticleCommentDto dto) {
+        try {
+            ArticleComment articleComment = articleCommentRepository.getReferenceById(dto.id());
+            if (dto.content() != null) { articleComment.setContent(dto.content()); }
+        } catch (EntityNotFoundException e) {
+            log.warn("댓글 업데이트 실패. 댓글을 찾을 수 없습니다 - dto: {}", dto);
+        }
+    }
+
     public void deleteArticleComment(Long articleCommentId, String userId) {
         articleCommentRepository.deleteByIdAndUserAccount_UserId(articleCommentId, userId);
     }
+
+
 }

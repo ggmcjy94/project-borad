@@ -40,5 +40,5 @@ public interface ArticleRepository extends
         bindings.bind(root.createdBy).first(StringExpression::containsIgnoreCase); // like '%s{v}%'
     }
 
-
+    void deleteByIdAndUserAccount_UserId(long articleId, String userId);
 }
