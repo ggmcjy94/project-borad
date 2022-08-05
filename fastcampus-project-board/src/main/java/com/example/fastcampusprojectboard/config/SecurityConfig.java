@@ -29,6 +29,7 @@ public class SecurityConfig {
                                 "/articles",
                                 "/articles/search-hashtag"
                         ).permitAll()
+                        .anyRequest().authenticated()
                 )
                 .formLogin().and()
                 .logout()
